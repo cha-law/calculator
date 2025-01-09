@@ -63,10 +63,18 @@ body {
     font-size: 32px;
     color: #272727;
     background-color: #c7c5c1;
-    box-shadow: 2px 2px 8px #808080;
+    box-shadow: 2px 2px 4px #808080;
     width: 80.5px;
     height: 80.5px;
     border-radius: 50px;
+}
+
+.button:hover {
+    background-color: #bdbbb7;
+}
+
+.operation:hover {
+    background-color: #a3a4ad;
 }
 
 .operation {
@@ -75,6 +83,10 @@ body {
 
 #AC {
     background-color: #dfaea1;
+}
+
+#AC:hover {
+    background-color: #cc9f93;
 }
 
 #OPERATE {
