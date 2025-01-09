@@ -25,8 +25,10 @@ function buttonPressed(event) {
 }
 
 function addToOperationsOutput(target) {
+    const operations = "+-x÷%"
     let splitOperation = operationOutput.textContent.split("");
-    if ( (splitOperation.at(-1) === "+") || (splitOperation.at(-1) === "-") || (splitOperation.at(-1) === "x") || (splitOperation.at(-1) === "÷") || (splitOperation.at(-1) === "%") ) {
+
+    if ((operations.includes(splitOperation.at(-1))) && ((operations.includes(target.textContent)))) {
         return;
     }
     operationOutput.textContent += target.textContent;
