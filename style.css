@@ -35,6 +35,7 @@ body {
     background-color: #b3b3b3;
     box-shadow: inset 5px 5px 10px #77787a;
     border-radius: 16px;
+    overflow-x: auto;
 }
 
 .output p {
@@ -71,6 +72,7 @@ body {
 
 .button:hover {
     background-color: #bdbbb7;
+    cursor: pointer;
 }
 
 .operation:hover {
