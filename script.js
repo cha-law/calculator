@@ -71,7 +71,7 @@ function addToOperationsOutput(target) {
 }
 
 function checkDecimalPoints(num) {
-    if (num.split("").includes(".")) {
+    if (String(num).split("").includes(".")) {
         return true;
     } else {
         return false;
@@ -109,7 +109,7 @@ function operate(operator, a, b) {
             }
             return remainder(a,b);
         default:
-            return "";
+            return a;
     }
 }
 
