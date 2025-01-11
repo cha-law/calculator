@@ -29,7 +29,7 @@ function buttonPressed(event) {
     } else {
         addToOperationsOutput(target);
         result = operate(operator, num1, num2);
-        addToResultOutput(result);
+        addToResultOutput(String(result));
     }
 }
 
@@ -47,7 +47,7 @@ function addToOperationsOutput(target) {
                 operator = "";
                 num2 = "";
                 result = operate(operator, num1, num2);
-                addToResultOutput(result);
+                addToResultOutput(String(result));
             } else {
                 return;
             }
@@ -127,11 +127,11 @@ function removePrevious(target) {
     operationOutput.textContent = operationOutput.textContent.slice(0, -1);
 
     if (num2 != "") {
-        num2.slice(0, -1);
+        String(num2).slice(0, -1);
     } else if (operator != "") {
         operator.slice(0, -1);
     } else {
-        num1.slice(0, -1);
+        String(num1).slice(0, -1);
     }
     result = operate(operator, num1, num2);
     addToResultOutput(result);
