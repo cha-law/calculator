@@ -72,8 +72,9 @@ function addToResultOutput(result) {
 }
 
 function operate(operator, a, b) {
-    a = Number(a)
-    b = Number(b)
+    a = Number(a);
+    b = Number(b);
+
     switch (operator) {
         case "+":
             return add(a,b);
@@ -82,8 +83,14 @@ function operate(operator, a, b) {
         case "x":
             return multiply(a,b);
         case "÷":
+            if (b === 0) {
+                return "";
+            }
             return divide(a,b);
         case "%":
+            if (b === 0) {
+                return "";
+            }
             return remainder(a,b);
         default:
             return "";
