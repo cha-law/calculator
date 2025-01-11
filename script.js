@@ -127,11 +127,12 @@ function removePrevious(target) {
     operationOutput.textContent = operationOutput.textContent.slice(0, -1);
 
     if (num2 != "") {
-        String(num2).slice(0, -1);
+        num2 = String(num2).slice(0, num2.length-1);
     } else if (operator != "") {
-        operator.slice(0, -1);
+        operator = String(operator).slice(0, operator.length-1);
+        operatorPresent = false;
     } else {
-        String(num1).slice(0, -1);
+        num1 = String(num1).slice(0, num1.length-1);
     }
     result = operate(operator, num1, num2);
     addToResultOutput(result);
