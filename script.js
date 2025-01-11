@@ -55,11 +55,27 @@ function addToOperationsOutput(target) {
         operatorPresent = true;
         operator = target.textContent;
     } else if (operatorPresent === true) {
+        // Ensure that there is not duplication of decimal points.
+        if ((checkDecimalPoints(num2) === true) && (target.textContent === ".")) {
+            return;
+        }
         num2 = num2 + target.textContent;
     } else {
+        // Ensure that there is not duplication of decimal points.
+        if ((checkDecimalPoints(num1) === true) && (target.textContent === ".")) {
+            return;
+        }
         num1 = num1 + target.textContent;
     }
     operationOutput.textContent += target.textContent;
+}
+
+function checkDecimalPoints(num) {
+    if (num.split("").includes(".")) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 function addToResultOutput(result) {
