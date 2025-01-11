@@ -84,7 +84,7 @@ function operate(operator, a, b) {
         case "÷":
             return divide(a,b);
         case "%":
-            return divide(a,b);
+            return remainder(a,b);
         default:
             return "";
     }
