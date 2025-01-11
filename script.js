@@ -19,15 +19,17 @@ function buttonPressed(event) {
         operate(operator, num1, num2)
     } else if (target.id === "OPERATE") {
         result = operate(operator, num1, num2);
+        num1 = result;
+        operationOutput.textContent = result;
+        operatorPresent = false;
+        operator = "";
+        num2 = "";
+        result = "";
+        addToResultOutput("");
     } else {
         addToOperationsOutput(target);
         result = operate(operator, num1, num2);
-
-        if (result != "") {
-            addToResultOutput(result);
-        } else {
-            addToResultOutput("");
-        }
+        addToResultOutput(result);
     }
 }
 
@@ -45,11 +47,7 @@ function addToOperationsOutput(target) {
                 operator = "";
                 num2 = "";
                 result = operate(operator, num1, num2);
-                if (result != "") {
-                    addToResultOutput(result);
-                } else {
-                    addToResultOutput("");
-                }
+                addToResultOutput(result);
             } else {
                 return;
             }
@@ -66,7 +64,11 @@ function addToOperationsOutput(target) {
 
 function addToResultOutput(result) {
     const resultOutput = document.querySelector(".result");
-    resultOutput.textContent = result;
+    if (result != "") {
+        resultOutput.textContent = result;
+    } else {
+        resultOutput.textContent = "";
+    }
 }
 
 function operate(operator, a, b) {
@@ -132,12 +134,7 @@ function removePrevious(target) {
         num1.slice(0, -1);
     }
     result = operate(operator, num1, num2);
-
-    if (result != "") {
-        addToResultOutput(result);
-    } else {
-        addToResultOutput("");
-    }
+    addToResultOutput(result);
 }
 
 // Variables
